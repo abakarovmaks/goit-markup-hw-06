@@ -6,6 +6,7 @@
   --secondary-gray-color: #f5f4fa;
   --footer-color: #2f303a;
   --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --animation-duration: 250ms;
   --svg-main-color: #afb1b8;
 }
 
@@ -191,7 +192,7 @@ img {
   color: var(--title-text-color-primary);
   text-decoration: none;
 
-  transition: color 250ms var(--timing-function);
+  transition: color var(--animation-duration) var(--timing-function);
 }
 
 .item:hover,
@@ -213,7 +214,7 @@ img {
   background-color: var(--accent-color);
   border-radius: 2px;
 
-  transition: opacity 250ms var(--timing-function);
+  transition: opacity var(--animation-duration) var(--timing-function);
 }
 
 .item:hover:after,
@@ -246,8 +247,8 @@ img {
   padding-top: 32px;
   padding-bottom: 32px;
 
-  transition: --color4 250ms var(--timing-function),
-    color 250ms var(--timing-function);
+  transition: --color4 var(--animation-duration) var(--timing-function),
+    color var(--animation-duration) var(--timing-function);
 }
 
 .adress-header:hover,
@@ -270,8 +271,8 @@ img {
   padding: 0;
   border: none;
 
-  transition: background-color 250ms var(--timing-function),
-    --color3 250ms var(--timing-function);
+  transition: background-color var(--animation-duration) var(--timing-function),
+    --color3 var(--animation-duration) var(--timing-function);
 }
 
 .social-links:hover,
@@ -285,7 +286,7 @@ img {
   height: 20px;
 
   fill: var(--svg-main-color);
-  transition: fill 250ms var(--timing-function);
+  transition: fill var(--animation-duration) var(--timing-function);
 }
 
 .icon-header {
@@ -302,7 +303,7 @@ img {
 
 .icon-customers {
   fill: var(--svg-main-color);
-  transition: fill 250ms var(--timing-function);
+  transition: fill var(--animation-duration) var(--timing-function);
 }
 
 .customers:hover .icon-customers,
@@ -323,7 +324,7 @@ img {
 
   color: var(--primary-white-color);
 
-  transition: color 250ms var(--timing-function);
+  transition: color var(--animation-duration) var(--timing-function);
 }
 
 .footer-contacts:hover,
@@ -334,7 +335,7 @@ img {
 .footer-mail {
   color: rgba(255, 255, 255, 0.6);
   padding-bottom: 9px;
-  transition: color 250ms var(--timing-function);
+  transition: color var(--animation-duration) var(--timing-function);
 }
 
 .footer-mail:hover,
@@ -344,7 +345,7 @@ img {
 
 .footer-tel {
   color: rgba(255, 255, 255, 0.6);
-  transition: color 250ms var(--timing-function);
+  transition: color var(--animation-duration) var(--timing-function);
 }
 
 .footer-tel:hover,
@@ -392,6 +393,9 @@ img {
 
   color: var(--primary-white-color);
   background-color: var(--accent-color);
+
+  transition: color var(--animation-duration) var(--timing-function),
+    background-color var(--animation-duration) var(--timing-function);
 }
 
 .button-primary:hover {
@@ -414,8 +418,8 @@ img {
 
   padding: 6px 22px;
 
-  transition: color 250ms var(--timing-function),
-    background-color 250ms var(--timing-function);
+  transition: color var(--animation-duration) var(--timing-function),
+    background-color var(--animation-duration) var(--timing-function);
 }
 
 .filter:hover,
@@ -507,7 +511,7 @@ img {
   background-color: rgba(33, 150, 243, 0.9);
   color: var(--primary-white-color);
 
-  transition: transform 250ms var(--timing-function);
+  transition: transform var(--animation-duration) var(--timing-function);
 }
 
 .card:hover .projects-overlay,
@@ -683,9 +687,9 @@ img {
   box-sizing: border-box;
   border-radius: 4px;
 
-  transition: --color2 250ms var(--timing-function),
-    --color3 250ms var(--timing-function),
-    border-color 250ms var(--timing-function);
+  transition: --color2 var(--animation-duration) var(--timing-function),
+    --color3 var(--animation-duration) var(--timing-function),
+    border-color var(--animation-duration) var(--timing-function);
 }
 
 .customers:hover,
@@ -728,6 +732,14 @@ footer > .container {
 .footer-container-second {
   padding-top: 57px;
   padding-bottom: 56px;
+  margin-right: 94px;
+}
+
+.footer-container-third {
+  display: flex;
+  flex-direction: column;
+  padding-top: 57px;
+  padding-bottom: 50px;
 }
 
 .social-links-footer {
@@ -744,7 +756,7 @@ footer > .container {
   padding: 0;
   border: none;
 
-  transition: background-color 250ms var(--timing-function);
+  transition: background-color var(--animation-duration) var(--timing-function);
 }
 
 .social-list:hover .social-links-footer,
@@ -831,3 +843,55 @@ footer > .container {
     rgba(47, 48, 58, 0.8)
   );
 }
+
+/* Оформление формы в футере */
+
+.form-field {
+  padding: 18px 12px;
+  margin-right: 12px;
+  height: 50px;
+  min-width: 358px;
+
+  color: var(--primary-white-color);
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+
+.button-footer {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 29px;
+
+  margin-top: 93px;
+  margin-bottom: 50px;
+  width: 200px;
+  height: 50px;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+
+  background-color: var(--accent-color);
+  color: var(--primary-white-color);
+
+  transition: color var(--animation-duration) var(--timing-function),
+    background-color var(--animation-duration) var(--timing-function);
+}
+
+.button-footer:after {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+
+  background-image: url(../images/sendfooter.svg);
+}
+
+/* .button-footer:hover,
+.button-footer:focus {
+  background-color: var(--primary-white-color);
+  color: var(--accent-color);
+} */
