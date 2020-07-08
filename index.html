@@ -59,7 +59,15 @@
       <section class="main-foto">
         <div class="container main">
           <h1 class="main-title">эффективные решения для вашего бизнеса</h1>
-          <button class="button-primary" href="#">Заказать услугу</button>
+          <button class="button-primary" data-modal-open>Заказать услугу</button>
+
+          <div class="backdrop is-hidden" data-modal>
+            <div class="modal">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia autem incidunt optio dicta dolore consequatur dolorum ex vitae alias. Eligendi, voluptatum. Sunt dolor, porro ipsum beatae aspernatur repudiandae explicabo corrupti.</p>
+              <button data-modal-close>Отправить</button>
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -477,5 +485,22 @@
       </div>
       <p class="copyright">2020 | Developed by GoIT Students</p>
     </footer>
+
+    <script>
+      (() => {
+  const refs = {
+    openModalBtn: document.querySelector('[data-modal-open]'),
+    closeModalBtn: document.querySelector('[data-modal-close]'),
+    modal: document.querySelector('[data-modal]'),
+  };
+
+  refs.openModalBtn.addEventListener('click', toggleModal);
+  refs.closeModalBtn.addEventListener('click', toggleModal);
+
+  function toggleModal() {
+    refs.modal.classList.toggle('is-hidden');
+  }
+})();
+    </script>
   </body>
 </html>

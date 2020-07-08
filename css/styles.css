@@ -860,6 +860,7 @@ footer > .container {
 }
 
 .button-footer {
+  position: relative;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -878,6 +879,8 @@ footer > .container {
 
   transition: color var(--animation-duration) var(--timing-function),
     background-color var(--animation-duration) var(--timing-function);
+
+  overflow: hidden;
 }
 
 .button-footer:after {
@@ -888,10 +891,70 @@ footer > .container {
   margin-left: 10px;
 
   background-image: url(../images/sendfooter.svg);
+
+  transition: transform var(--animation-duration) var(--timing-function);
 }
 
-/* .button-footer:hover,
+.button-footer:before {
+  position: absolute;
+  left: 135px;
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+
+  background-image: url(../images/sendfooter2.svg);
+
+  transform: translateY(40px);
+
+  transition: transform var(--animation-duration) var(--timing-function);
+}
+
+.button-footer:hover::after {
+  transform: translateY(-40px);
+}
+
+.button-footer:hover::before {
+  transform: translateY(0px);
+}
+
+.button-footer:hover,
 .button-footer:focus {
   background-color: var(--primary-white-color);
   color: var(--accent-color);
-} */
+}
+
+/* Оформление бэкдропа в основной секции */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  transition: var(--animation-duration) var(--timing-function);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  padding: 40px;
+  min-height: 581px;
+  min-width: 528px;
+
+  background-color: var(--primary-white-color);
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+}
