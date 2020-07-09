@@ -1071,27 +1071,33 @@ footer > .container {
 
 .icon-modal {
   position: absolute;
-  width: 18px;
-  height: 18px;
+  width: 11px;
+  height: 11px;
+
+  transform: translate(-50%, -50%);
+
+  /* right: 8px;
+  top: 9px; */
+
+  transition: fill var(--animation-duration) var(--timing-function);
+}
+
+.button-modal {
+  position: absolute;
+
+  width: 30px;
+  height: 30px;
 
   right: 8px;
   top: 8px;
 
   background: var(--primary-white-color);
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.modal .icon-modal {
-  width: 30px;
-  height: 30px;
-
-  --color2: rgba(0, 0, 0, 0.1);
-  --color3: var(--title-text-color-primary);
-
-  transition: --color3 var(--animation-duration) var(--timing-function);
-}
-
-.icon-modal:hover {
-  --color3: #2196f3;
+.button-modal:hover > .icon-modal {
+  fill: var(--accent-color);
 }
 
 .icon-modal-input {
@@ -1115,8 +1121,6 @@ footer > .container {
   font-size: 14px;
   line-height: 1.15;
   letter-spacing: 0.01em;
-
-  /* color: var(--title-text-color-secondary); */
 
   transform: translate(45px, 13px);
 
