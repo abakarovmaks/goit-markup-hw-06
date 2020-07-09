@@ -98,14 +98,20 @@
                 </div>
 
                 <div class="textarea-block">
-                  <label for="comment">Комментарий</label>
                   <textarea name="comment" id="comment" cols="30" rows="10">
                   </textarea>
+                  <label for="comment" name="comment" class="comment"
+                    >Комментарий</label
+                  >
                 </div>
 
                 <div class="policy">
-                  <input type="checkbox" id="policy" name="option" />
-                  <label for="policy">Соглашаюсь с рассылкой и принимаю</label>
+                  <label class="check">
+                    <input type="checkbox" name="option" class="check-input" />
+                    <span class="check-box"></span>
+                    Соглашаюсь с рассылкой и принимаю
+                  </label>
+
                   <a href="#">
                     <span class="policy-terms">Условия договора</span>
                   </a>
