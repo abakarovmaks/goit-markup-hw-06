@@ -911,11 +911,13 @@ footer > .container {
   transition: transform var(--animation-duration) var(--timing-function);
 }
 
-.button-footer:hover::after {
+.button-footer:hover::after,
+.buttom-footer:focus:after {
   transform: translateY(-40px);
 }
 
-.button-footer:hover::before {
+.button-footer:hover::before,
+.button-footer:focus::before {
   transform: translateY(0px);
 }
 
@@ -923,6 +925,14 @@ footer > .container {
 .button-footer:focus {
   background-color: var(--primary-white-color);
   color: var(--accent-color);
+}
+
+.modal-text {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+
+  margin-bottom: 12px;
 }
 
 /* Оформление бэкдропа в основной секции */
@@ -936,6 +946,8 @@ footer > .container {
   background-color: rgba(0, 0, 0, 0.2);
 
   transition: var(--animation-duration) var(--timing-function);
+
+  z-index: 1;
 }
 
 .backdrop.is-hidden {
@@ -957,4 +969,167 @@ footer > .container {
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 1px 3px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
+}
+
+/* Оформление модального окна при бэкдропе */
+
+.form {
+  margin-top: 30px;
+}
+
+.form textarea {
+  resize: none;
+  min-width: 100%;
+  min-height: 120px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+
+.form-field-backdrop {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-bottom: 28px;
+}
+
+.form-field-backdrop label {
+  margin-bottom: 4px;
+}
+
+.form-field-backdrop input {
+  height: 40px;
+  width: 100%;
+
+  padding: 16px 12px 16px 42px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+
+.form-field-backdrop:first-child {
+  margin-top: 12px;
+}
+
+.textarea-block {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  margin-bottom: 20px;
+}
+
+.textarea-block label {
+  margin-bottom: 4px;
+}
+
+.textarea-block textarea {
+  padding: 12px 16px;
+}
+
+.policy {
+  margin-bottom: 30px;
+}
+
+.policy-terms {
+  text-decoration: underline;
+  color: var(--accent-color);
+
+  transition: color var(--animation-duration) var(--timing-function);
+}
+
+.policy-terms:hover,
+.policy-terms:focus {
+  color: green;
+}
+
+.button-send {
+  display: inline-block;
+
+  min-width: 200px;
+
+  border-radius: 4px;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  line-height: 3;
+
+  color: var(--primary-white-color);
+  background-color: var(--accent-color);
+
+  transition: color var(--animation-duration) var(--timing-function),
+    background-color var(--animation-duration) var(--timing-function);
+}
+
+.button-send:hover,
+.button-send:focus {
+  color: var(--accent-color);
+  background-color: var(--primary-white-color);
+}
+
+/* Оформление иконок в бэкдропе */
+
+.icon-modal {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+
+  right: 8px;
+  top: 8px;
+
+  background: var(--primary-white-color);
+}
+
+.modal .icon-modal {
+  width: 30px;
+  height: 30px;
+
+  --color2: rgba(0, 0, 0, 0.1);
+  --color3: var(--title-text-color-primary);
+
+  transition: --color3 var(--animation-duration) var(--timing-function);
+}
+
+.icon-modal:hover {
+  --color3: #2196f3;
+}
+
+.icon-modal-input {
+  position: absolute;
+
+  width: 18px;
+  height: 18px;
+
+  transition: fill var(--animation-duration) var(--timing-function);
+  transform: translate(14px, 12px);
+}
+
+.form-field-backdrop:hover .icon-modal-input,
+.form-field-backdrop:focus-within .icon-modal-input {
+  fill: var(--accent-color);
+}
+
+.label-absolute {
+  position: absolute;
+
+  font-size: 14px;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+
+  /* color: var(--title-text-color-secondary); */
+
+  transform: translate(45px, 13px);
+
+  transition: transform var(--animation-duration) var(--timing-function),
+    color var(--animation-duration) var(--timing-function),
+    font-size var(--animation-duration) var(--timing-function),
+    line-height var(--animation-duration) var(--timing-function);
+}
+
+.form-field-backdrop:hover > .label-absolute,
+.form-field-backdrop:focus-within > .label-absolute {
+  transform: translate(15px, -20px);
+  color: var(--accent-color);
+  font-size: 12px;
+  line-height: 1.17;
 }

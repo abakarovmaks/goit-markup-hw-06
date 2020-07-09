@@ -59,15 +59,62 @@
       <section class="main-foto">
         <div class="container main">
           <h1 class="main-title">эффективные решения для вашего бизнеса</h1>
-          <button class="button-primary" data-modal-open>Заказать услугу</button>
+          <button class="button-primary" data-modal-open>
+            Заказать услугу
+          </button>
 
           <div class="backdrop is-hidden" data-modal>
             <div class="modal">
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia autem incidunt optio dicta dolore consequatur dolorum ex vitae alias. Eligendi, voluptatum. Sunt dolor, porro ipsum beatae aspernatur repudiandae explicabo corrupti.</p>
-              <button data-modal-close>Отправить</button>
+              <button>
+                <svg class="icon-modal">
+                  <use href="./images/sprite-modal.svg#icon-modalclose"></use>
+                </svg>
+              </button>
+              <b class="modal-text">Оставьте свои данные, мы вам перезвоним</b>
+
+              <form class="form">
+                <div class="form-field-backdrop">
+                  <label for="name" class="label-absolute">Имя</label>
+                  <input type="text" id="name" name="name" />
+                  <svg class="icon-modal-input">
+                    <use
+                      href="./images/sprite-modal.svg#icon-modalperson"
+                    ></use>
+                  </svg>
+                </div>
+                <div class="form-field-backdrop">
+                  <label for="tel" class="label-absolute">Телефон</label>
+                  <input type="tel" id="tel" name="tel" />
+                  <svg class="icon-modal-input">
+                    <use href="./images/sprite-modal.svg#icon-modalphone"></use>
+                  </svg>
+                </div>
+                <div class="form-field-backdrop">
+                  <label for="email" class="label-absolute">E-mail</label>
+                  <input type="email" id="email" name="email" />
+                  <svg class="icon-modal-input">
+                    <use href="./images/sprite-modal.svg#icon-modalemail"></use>
+                  </svg>
+                </div>
+
+                <div class="textarea-block">
+                  <label for="comment">Комментарий</label>
+                  <textarea name="comment" id="comment" cols="30" rows="10">
+                  </textarea>
+                </div>
+
+                <div class="policy">
+                  <input type="checkbox" id="policy" name="option" />
+                  <label for="policy">Соглашаюсь с рассылкой и принимаю</label>
+                  <a href="#">
+                    <span class="policy-terms">Условия договора</span>
+                  </a>
+                </div>
+
+                <button data-modal-close class="button-send">Отправить</button>
+              </form>
             </div>
           </div>
-
         </div>
       </section>
 
@@ -477,30 +524,28 @@
               placeholder="E-mail"
               class="form-field"
             />
-          </div>
-            <button class="button-footer" type="submit">Подписаться
-            </button>
           </form>
-        
+        </div>
+        <button class="button-footer" type="submit">Подписаться</button>
       </div>
       <p class="copyright">2020 | Developed by GoIT Students</p>
     </footer>
 
     <script>
       (() => {
-  const refs = {
-    openModalBtn: document.querySelector('[data-modal-open]'),
-    closeModalBtn: document.querySelector('[data-modal-close]'),
-    modal: document.querySelector('[data-modal]'),
-  };
+        const refs = {
+          openModalBtn: document.querySelector("[data-modal-open]"),
+          closeModalBtn: document.querySelector("[data-modal-close]"),
+          modal: document.querySelector("[data-modal]"),
+        };
 
-  refs.openModalBtn.addEventListener('click', toggleModal);
-  refs.closeModalBtn.addEventListener('click', toggleModal);
+        refs.openModalBtn.addEventListener("click", toggleModal);
+        refs.closeModalBtn.addEventListener("click", toggleModal);
 
-  function toggleModal() {
-    refs.modal.classList.toggle('is-hidden');
-  }
-})();
+        function toggleModal() {
+          refs.modal.classList.toggle("is-hidden");
+        }
+      })();
     </script>
   </body>
 </html>
