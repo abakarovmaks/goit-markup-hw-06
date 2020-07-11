@@ -316,8 +316,10 @@
       <div class="container">
         <div class="footer-container-first">
           <p class="logo-footer">
-            <span class="logo-web">Web</span>
-            <span class="logo-studio-footer">Studio</span>
+            <a href="#">
+              <span class="logo-web">Web</span>
+              <span class="logo-studio-footer">Studio</span>
+            </a>
           </p>
           <address class="adress-footer">
             <a class="footer-contacts" href="#"
@@ -334,67 +336,69 @@
           </ul>
         </div>
 
-        <div class="footer-container-second">
-          <p class="connect"><b>присоединяйтесь</b></p>
-          <ul class="footer-list">
-            <li class="social-list">
-              <a class="social-links-footer" href="#" aria-label="Instagram">
-                <svg class="icon instagram-footer">
-                  <use href="./images/sprite.svg#icon-instagram"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="social-list">
-              <a
-                class="social-links-footer twitter-footer"
-                href="#"
-                aria-label="Twitter"
-              >
-                <svg class="icon twitter-footer">
-                  <use href="./images/sprite.svg#icon-twitter"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="social-list">
-              <a
-                class="social-links-footer facebook-footer"
-                href="#"
-                aria-label="Facebook"
-              >
-                <svg class="icon facebook-footer">
-                  <use href="./images/sprite.svg#icon-facebook"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="social-list">
-              <a
-                class="social-links-footer linkedin-footer"
-                href="#"
-                aria-label="Linkedin"
-              >
-                <svg class="icon linkedin-footer">
-                  <use href="./images/sprite.svg#icon-linkedin"></use>
-                </svg>
-              </a>
-            </li>
-          </ul>
-        </div>
+        <div class="footer-flex">
+          <div class="footer-container-second">
+            <p class="connect"><b>присоединяйтесь</b></p>
+            <ul class="footer-list">
+              <li class="social-list">
+                <a class="social-links-footer" href="#" aria-label="Instagram">
+                  <svg class="icon instagram-footer">
+                    <use href="./images/sprite.svg#icon-instagram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="social-list">
+                <a
+                  class="social-links-footer twitter-footer"
+                  href="#"
+                  aria-label="Twitter"
+                >
+                  <svg class="icon twitter-footer">
+                    <use href="./images/sprite.svg#icon-twitter"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="social-list">
+                <a
+                  class="social-links-footer facebook-footer"
+                  href="#"
+                  aria-label="Facebook"
+                >
+                  <svg class="icon facebook-footer">
+                    <use href="./images/sprite.svg#icon-facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="social-list">
+                <a
+                  class="social-links-footer linkedin-footer"
+                  href="#"
+                  aria-label="Linkedin"
+                >
+                  <svg class="icon linkedin-footer">
+                    <use href="./images/sprite.svg#icon-linkedin"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
 
-        <div class="footer-container-third">
-          <b class="connect">Подпишитесь на рассылку</b>
+          <div class="footer-container-third">
+            <b class="connect">Подпишитесь на рассылку</b>
 
-          <form class="js-speaker-form" autocomplete="off">
-            <input
-              type="email"
-              name="email"
-              placeholder="E-mail"
-              class="form-field"
-            />
-          </form>
+            <form class="js-speaker-form" autocomplete="off">
+              <input
+                type="email"
+                name="email"
+                placeholder="E-mail"
+                class="form-field"
+              />
+
+              <button class="button-footer" type="submit">Подписаться</button>
+            </form>
+          </div>
         </div>
-        <button class="button-footer" type="submit">Подписаться</button>
       </div>
-      <p class="copyright">2020 | Developed by GoIT Students</p>
     </footer>
   </body>
 </html>

@@ -72,10 +72,16 @@
               </button>
               <b class="modal-text">Оставьте свои данные, мы вам перезвоним</b>
 
-              <form class="form">
+              <form class="form" autocomplete="off">
                 <div class="form-field-backdrop">
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="form-input"
+                    placeholder=" "
+                  />
                   <label for="name" class="label-absolute">Имя</label>
-                  <input type="text" id="name" name="name" />
                   <svg class="icon-modal-input">
                     <use
                       href="./images/sprite-modal.svg#icon-modalperson"
@@ -83,26 +89,44 @@
                   </svg>
                 </div>
                 <div class="form-field-backdrop">
+                  <input
+                    type="tel"
+                    id="tel"
+                    name="tel"
+                    class="form-input"
+                    placeholder=" "
+                  />
                   <label for="tel" class="label-absolute">Телефон</label>
-                  <input type="tel" id="tel" name="tel" />
                   <svg class="icon-modal-input">
                     <use href="./images/sprite-modal.svg#icon-modalphone"></use>
                   </svg>
                 </div>
                 <div class="form-field-backdrop">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-input"
+                    placeholder=" "
+                  />
                   <label for="email" class="label-absolute">E-mail</label>
-                  <input type="email" id="email" name="email" />
                   <svg class="icon-modal-input">
                     <use href="./images/sprite-modal.svg#icon-modalemail"></use>
                   </svg>
                 </div>
 
                 <div class="textarea-block">
-                  <textarea name="comment" id="comment" cols="30" rows="10">
-                  </textarea>
+                  <textarea
+                    name="comment"
+                    id="comment"
+                    cols="30"
+                    rows="10"
+                    class="textarea-comment"
+                    placeholder=" "
+                  ></textarea>
                   <label for="comment" name="comment" class="comment"
-                    >Комментарий</label
-                  >
+                    >Комментарий
+                  </label>
                 </div>
 
                 <div class="policy">
@@ -117,7 +141,7 @@
                   </a>
                 </div>
 
-                <button data-modal-close class="button-send">Отправить</button>
+                <button class="button-send" type="submit">Отправить</button>
               </form>
             </div>
           </div>
@@ -456,8 +480,10 @@
       <div class="container">
         <div class="footer-container-first">
           <p class="logo-footer">
-            <span class="logo-web">Web</span>
-            <span class="logo-studio-footer">Studio</span>
+            <a href="#">
+              <span class="logo-web">Web</span>
+              <span class="logo-studio-footer">Studio</span>
+            </a>
           </p>
           <address class="adress-footer">
             <a class="footer-contacts" href="#"
@@ -474,84 +500,71 @@
           </ul>
         </div>
 
-        <div class="footer-container-second">
-          <p class="connect"><b>присоединяйтесь</b></p>
-          <ul class="footer-list">
-            <li class="social-list">
-              <a class="social-links-footer" href="#" aria-label="Instagram">
-                <svg class="icon instagram-footer">
-                  <use href="./images/sprite.svg#icon-instagram"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="social-list">
-              <a
-                class="social-links-footer twitter-footer"
-                href="#"
-                aria-label="Twitter"
-              >
-                <svg class="icon twitter-footer">
-                  <use href="./images/sprite.svg#icon-twitter"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="social-list">
-              <a
-                class="social-links-footer facebook-footer"
-                href="#"
-                aria-label="Facebook"
-              >
-                <svg class="icon facebook-footer">
-                  <use href="./images/sprite.svg#icon-facebook"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="social-list">
-              <a
-                class="social-links-footer linkedin-footer"
-                href="#"
-                aria-label="Linkedin"
-              >
-                <svg class="icon linkedin-footer">
-                  <use href="./images/sprite.svg#icon-linkedin"></use>
-                </svg>
-              </a>
-            </li>
-          </ul>
-        </div>
+        <div class="footer-flex">
+          <div class="footer-container-second">
+            <p class="connect"><b>присоединяйтесь</b></p>
+            <ul class="footer-list">
+              <li class="social-list">
+                <a class="social-links-footer" href="#" aria-label="Instagram">
+                  <svg class="icon instagram-footer">
+                    <use href="./images/sprite.svg#icon-instagram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="social-list">
+                <a
+                  class="social-links-footer twitter-footer"
+                  href="#"
+                  aria-label="Twitter"
+                >
+                  <svg class="icon twitter-footer">
+                    <use href="./images/sprite.svg#icon-twitter"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="social-list">
+                <a
+                  class="social-links-footer facebook-footer"
+                  href="#"
+                  aria-label="Facebook"
+                >
+                  <svg class="icon facebook-footer">
+                    <use href="./images/sprite.svg#icon-facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="social-list">
+                <a
+                  class="social-links-footer linkedin-footer"
+                  href="#"
+                  aria-label="Linkedin"
+                >
+                  <svg class="icon linkedin-footer">
+                    <use href="./images/sprite.svg#icon-linkedin"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
 
-        <div class="footer-container-third">
-          <b class="connect">Подпишитесь на рассылку</b>
+          <div class="footer-container-third">
+            <b class="connect">Подпишитесь на рассылку</b>
 
-          <form class="js-speaker-form" autocomplete="off">
-            <input
-              type="email"
-              name="email"
-              placeholder="E-mail"
-              class="form-field"
-            />
-          </form>
+            <form class="js-speaker-form" autocomplete="off">
+              <input
+                type="email"
+                name="email"
+                placeholder="E-mail"
+                class="form-field"
+              />
+
+              <button class="button-footer" type="submit">Подписаться</button>
+            </form>
+          </div>
         </div>
-        <button class="button-footer" type="submit">Подписаться</button>
       </div>
-      <p class="copyright">2020 | Developed by GoIT Students</p>
     </footer>
 
-    <script>
-      (() => {
-        const refs = {
-          openModalBtn: document.querySelector("[data-modal-open]"),
-          closeModalBtn: document.querySelector("[data-modal-close]"),
-          modal: document.querySelector("[data-modal]"),
-        };
-
-        refs.openModalBtn.addEventListener("click", toggleModal);
-        refs.closeModalBtn.addEventListener("click", toggleModal);
-
-        function toggleModal() {
-          refs.modal.classList.toggle("is-hidden");
-        }
-      })();
-    </script>
+    <script src="./js/modal.js"></script>
   </body>
 </html>

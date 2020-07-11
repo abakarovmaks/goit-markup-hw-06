@@ -154,12 +154,12 @@ img {
 }
 
 .logo-footer {
-  padding-bottom: 8px;
+  margin-bottom: 20px;
 
   font-family: Raleway;
   font-weight: 700;
-  font-size: 22px;
-  line-height: 1.18;
+  font-size: 26px;
+  line-height: 1.19;
   text-decoration: none;
 }
 
@@ -354,7 +354,7 @@ img {
 }
 
 .footer-padding {
-  padding-bottom: 28px;
+  /* padding-bottom: 28px; */
   list-style: none;
 }
 
@@ -723,23 +723,19 @@ footer > .container {
 }
 
 .footer-container-first {
-  padding-top: 45px;
-  padding-bottom: 28px;
+  margin-bottom: 60px;
+  margin-top: 60px;
 
   margin-right: 69px;
 }
 
 .footer-container-second {
-  padding-top: 57px;
-  padding-bottom: 56px;
   margin-right: 94px;
 }
 
 .footer-container-third {
   display: flex;
   flex-direction: column;
-  padding-top: 57px;
-  padding-bottom: 50px;
 }
 
 .social-links-footer {
@@ -807,6 +803,10 @@ footer > .container {
     url("../images/header.jpg");
   background-color: #2f303a;
 
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
   margin-right: auto;
   margin-left: auto;
   background-position: center;
@@ -866,8 +866,8 @@ footer > .container {
   align-items: center;
   padding: 10px 29px;
 
-  margin-top: 93px;
-  margin-bottom: 50px;
+  /* margin-top: 93px; */
+  /* margin-bottom: 50px; */
   width: 200px;
   height: 50px;
 
@@ -935,6 +935,15 @@ footer > .container {
   margin-bottom: 12px;
 }
 
+.footer-flex {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+
+  margin-top: 72px;
+  margin-bottom: 94px;
+}
+
 /* Оформление бэкдропа в основной секции */
 
 .backdrop {
@@ -987,17 +996,40 @@ footer > .container {
 }
 
 .form-field-backdrop {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
+  position: relative;
   margin-bottom: 28px;
 }
 
-.form-field-backdrop label {
-  margin-bottom: 4px;
+.label-absolute {
+  position: absolute;
+
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+
+  top: 50%;
+  left: 42px;
+
+  transform: translateY(-50%);
+
+  transition: transform var(--animation-duration) var(--timing-function),
+    color var(--animation-duration) var(--timing-function),
+    font-size var(--animation-duration) var(--timing-function),
+    line-height var(--animation-duration) var(--timing-function);
 }
 
-.form-field-backdrop input {
+.form-input:hover + .label-absolute,
+.form-input:focus + .label-absolute,
+.form-input:not(:placeholder-shown) + .label-absolute {
+  transform: translate(-20px, -40px);
+
+  font-size: 12px;
+  line-height: 1.17;
+
+  color: var(--accent-color);
+}
+
+.form-field-backdrop .form-input {
   height: 40px;
   width: 100%;
 
@@ -1005,6 +1037,8 @@ footer > .container {
 
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+
+  outline: none;
 }
 
 .form-field-backdrop:first-child {
@@ -1012,43 +1046,69 @@ footer > .container {
 }
 
 .textarea-block {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
+  position: relative;
 
   margin-bottom: 20px;
 }
 
-.textarea-block label {
-  margin-bottom: 4px;
-}
+.textarea-comment {
+  width: 448px;
+  height: 120px;
 
-.textarea-block textarea {
   padding: 12px 16px;
+
+  outline: none;
 }
 
-.textarea-block:hover .comment,
-.textarea-block:focus-within .comment {
-  transform: translate(15px, -20px);
-  color: var(--accent-color);
+.textarea-comment:focus {
+  border-color: var(--accent-color);
+}
+
+.comment {
+  position: absolute;
+
+  font-size: 14px;
+  line-height: 1.15;
+
+  top: 12px;
+  left: 16px;
+
+  transition: transform var(--animation-duration) var(--timing-function),
+    color var(--animation-duration) var(--timing-function),
+    font-size var(--animation-duration) var(--timing-function),
+    line-height var(--animation-duration) var(--timing-function),
+    border-color var(--animation-duration) var(--timing-function);
+}
+
+.textarea-comment:hover + .comment,
+.textarea-comment:focus + .comment,
+.textarea-comment:not(:placeholder-shown) + .comment {
+  transform: translateY(-32px);
+
   font-size: 12px;
   line-height: 1.17;
+
+  color: var(--accent-color);
+  border-color: var(--accent-color);
 }
 
-.check {
+.policy {
   margin-bottom: 30px;
-  padding-left: 1.2em;
 }
 
 .policy-terms {
-  text-decoration: underline;
+  text-decoration-line: underline;
+
   color: var(--accent-color);
+
+  font-size: 14px;
+  line-height: 24px;
 
   transition: color var(--animation-duration) var(--timing-function);
 }
 
 .policy-terms:hover,
-.policy-terms:focus {
+a:focus > .policy-terms {
   color: green;
 }
 
@@ -1114,50 +1174,32 @@ footer > .container {
   height: 18px;
 
   transition: fill var(--animation-duration) var(--timing-function);
-  transform: translate(14px, 12px);
+
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
 }
 
-.form-field-backdrop:hover .icon-modal-input,
-.form-field-backdrop:focus-within .icon-modal-input {
+.form-input:hover ~ .icon-modal-input,
+.form-input:focus ~ .icon-modal-input,
+.form-input:not(:placeholder-shown) ~ .icon-modal-input {
   fill: var(--accent-color);
 }
 
-.label-absolute {
-  position: absolute;
-
-  font-size: 14px;
-  line-height: 1.15;
-  letter-spacing: 0.01em;
-
-  transform: translate(45px, 13px);
-
-  transition: transform var(--animation-duration) var(--timing-function),
-    color var(--animation-duration) var(--timing-function),
-    font-size var(--animation-duration) var(--timing-function),
-    line-height var(--animation-duration) var(--timing-function);
+.form-input:focus {
+  border-color: var(--accent-color);
 }
 
-.form-field-backdrop:hover > .label-absolute,
-.form-field-backdrop:focus-within > .label-absolute {
-  transform: translate(15px, -20px);
-  color: var(--accent-color);
-  font-size: 12px;
-  line-height: 1.17;
-}
+/* Оформление кастомного чекбокса */
 
-.comment {
-  position: absolute;
+.check {
+  margin-bottom: 30px;
+  padding-left: 1.2em;
 
   font-size: 14px;
-  line-height: 1.15;
-  letter-spacing: 0.01em;
+  line-height: 24px;
 
-  transform: translate(15px, 13px);
-
-  transition: transform var(--animation-duration) var(--timing-function),
-    color var(--animation-duration) var(--timing-function),
-    font-size var(--animation-duration) var(--timing-function),
-    line-height var(--animation-duration) var(--timing-function);
+  color: var(--title-text-color-secondary);
 }
 
 .check-input {
@@ -1171,7 +1213,7 @@ footer > .container {
 .check-box {
   position: absolute;
 
-  margin-top: 0.2em;
+  margin-top: 0.5em;
   margin-left: -1em;
   width: 0.6em;
   height: 0.6em;
@@ -1189,6 +1231,7 @@ footer > .container {
   background-image: url(../images/check.svg);
   background-repeat: no-repeat;
   background-size: contain;
+  background-position: center;
 }
 
 .check-input:hover + .check-box {
